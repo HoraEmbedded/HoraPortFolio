@@ -5,46 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Horacia AZONHOUMON – Portfolio GSEA</title>
   <meta name="description" content="Portfolio professionnel de Horacia AZONHOUMON, étudiante ingénieure en Génie des Systèmes Électronique et Automatique (GSEA).">
+  
   <!-- Importation des polices modernes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
-  <style>
-    /* ════════════════════════════════════════
-       VARIABLES & THÈME (Style Logiciel CAO)
-    ════════════════════════════════════════ */
 
-    
+  <style>
+
+    /* ─── NOUVELLES POLICES (Écrasement automatique) ─── */
     :root {
       --font-main: 'Inter', sans-serif;
       --font-tech: 'JetBrains Mono', monospace;
     }
 
-    
+    /* Applique Inter à tout le texte standard */
     body, p, h1, h2, h3, h4, .body-text {
       font-family: var(--font-main) !important;
     }
 
-   
+    /* Remplace automatiquement les anciennes polices inline par Inter */
     [style*="Segoe UI"], [style*="DM Sans"], [style*="Arial"] {
       font-family: var(--font-main) !important;
     }
 
-    
+    /* Applique JetBrains Mono à tous les éléments techniques et codes */
     [style*="monospace"], .sys-title, .filter-btn, .tech-chip, .prj-lbl, .time-date {
       font-family: var(--font-tech) !important;
     }
-    
+
+    /* ════════════════════════════════════════
+       VARIABLES & THÈME (Style Logiciel CAO)
+    ════════════════════════════════════════ */
     :root {
       --menu-bg: #f0f0f0;
       --toolbar-bg: #e4e4e4;
       --sidebar-bg: #f4f4f4;
       --sidebar-header: #c8c8c8;
-      --workspace-bg: #7a7a7a;
+      
+      /* 1. Le fond gris derrière (Workspace) à 40% d'opacité */
+      --workspace-bg: rgba(122, 122, 122, 0.4); 
       
       --page-bg: #ffffff;
-      --grid-dot: #b0c4de;
+      
+      /* 2. Les pointillés (Grid dot) à 30% d'opacité */
+      --grid-dot: rgba(176, 196, 222, 0.3); 
       
       --text-main: #333333;
       --text-muted: #666666;
@@ -214,7 +219,7 @@
       /* Grille pointillée typique CAO */
       background-image: radial-gradient(circle, var(--grid-dot) 1px, transparent 1px);
       background-size: 20px 20px;
-      box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+      box-shadow: 3px 3px 10px rgba(225, 213, 213, 0.3);
       padding: 50px 60px;
       min-height: 1050px;
     }
@@ -381,15 +386,39 @@
       .page { padding: 20px; min-height: auto; }
       .blocks-grid { grid-template-columns: 1fr; }
     }
-  </style>
+ 
+    /* ─── CORRECTION : SUPPRESSION DU VIDE (ACCUEIL) ─── */
+    #sec-accueil {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
+    }
+
+    /* Force le tout dernier élément de l'accueil à ne pas pousser le bas de la page */
+    #sec-accueil > *:last-child {
+      margin-bottom: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+ </style>
 </head>
 <body>
 
   <div class="toolbar">
     <div class="toolbar-group">
-    
+      <button class="toolbar-btn" title="Sauvegarder CV" onclick="window.open('chemin_vers_ton_CV.pdf', '_blank')">
+        <svg viewBox="0 0 24 24"><path d="M19 21H5C3.895 21 3 20.105 3 19V5C3 3.895 3.895 3 5 3H16L21 8V19C21 20.105 20.105 21 19 21ZM5 5V19H19V8.828L15.172 5H5ZM15 19V15H9V19H15ZM15 5V9H9V5H15Z"/></svg>
+      </button>
+      <button class="toolbar-btn" title="Imprimer" onclick="window.print()">
+        <svg viewBox="0 0 24 24"><path d="M19 8H5V3H19V8ZM16 5H8V6H16V5ZM21 10C21.552 10 22 10.448 22 11V18H18V21H6V18H2C1.448 18 1 17.552 1 17V11C1 10.448 1.448 10 2 10H21ZM16 19V15H8V19H16ZM18 12C18 11.448 18.448 11 19 11C19.552 11 20 11.448 20 12C20 12.552 19.552 13 19 13C18.448 13 18 12.552 18 12Z"/></svg>
+      </button>
     </div>
     <div class="toolbar-group" style="border-right: none;">
+      <button class="toolbar-btn" title="Exécuter la simulation (Aller aux projets)" onclick="switchTab('projets', document.querySelectorAll('.nav-item')[2])" style="color: #008f39;">
+        <svg viewBox="0 0 24 24"><path d="M8 5V19L19 12L8 5Z"/></svg>
+      </button>
+      <button class="toolbar-btn" title="Arrêter (Retour à l'accueil)" onclick="switchTab('accueil', document.querySelectorAll('.nav-item')[0])" style="color: #cc0000;">
+        <svg viewBox="0 0 24 24"><path d="M6 6H18V18H6V6Z"/></svg>
+      </button>
       
       <div style="width: 1px; background: #c0c0c0; margin: 0 5px;"></div>
       
@@ -427,7 +456,8 @@
     <main class="workspace" id="workspace">
       <div class="page">
         
-        <div id="sec-accueil" class="section-content active">
+        
+          <div id="sec-accueil" class="section-content active">
 
 
             <style>
@@ -578,14 +608,11 @@
             </p>
 
             <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 35px;">
-              <button onclick="switchTab('projets')" style="background: linear-gradient(180deg, #1E5CB8, #5898D8); color: white; border: 1px solid #1848A8; padding: 9px 18px; font-size: 12px; font-weight: bold; border-radius: 3px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(32, 96, 184, 0.2);">
+              <button onclick="switchTab('projets')" style="background: linear-gradient(180deg, #1E5CB8, #5898D8); color: white; border: 1px solid #1848A8; padding: 5px 10px; font-size: 12px; font-weight: bold; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(32, 96, 184, 0.2);">
                 Voir les Projets <span>➔</span>
               </button>
-              <a href="cv-horacia-azonhoumon.pdf" download="cv-horacia-azonhoumon.pdf" target="_blank" style="text-decoration: none; background: white; color: #1848A8; border: 1px solid #B5D0EE; padding: 9px 18px; font-size: 12px; font-weight: bold; border-radius: 3px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
-                Télécharger CV
-              </a>
-              <button onclick="switchTab('contact')" style="background: white; color: #1848A8; border: 1px solid #B5D0EE; padding: 9px 18px; font-size: 12px; font-weight: bold; border-radius: 3px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;">
+
+              <button onclick="switchTab('contact')" style="background: white; color: #1848A8; border: 1px solid #B5D0EE; padding: 5px 10px; font-size: 12px; font-weight: bold; border-radius: 20px; cursor: pointer; display: flex; align-items: center; gap: 6px; transition: background 0.2s;">
                 ✉ Me Contacter
               </button>
             </div>
@@ -780,12 +807,12 @@
               « Ceux qui sont vraiment sérieux au sujet du logiciel devraient fabriquer leur propre matériel. »
             </p>
             <div style="font-family: monospace; font-size: 11px; color: #5878A0; font-weight: bold; text-transform: uppercase;">
-              — Alan Kay
+              — Alan Kay (Pionnier de l'informatique)
             </div>
           </div>
 
         </div>
-        
+
         <div id="sec-projets" class="section-content">
           
           <style>
@@ -837,7 +864,7 @@
               <div style="padding: 20px; flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span class="cat-Embarqué" style="font-family: monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px;">Embarqué</span>
-                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé • 2026</span>
+                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé · 2026</span>
                 </div>
                 <h3 style="font-size: 16px; font-weight: 700; color: #102A70; margin-bottom: 15px; line-height: 1.3;">Programmation DSP — TMS320C6713 DSK</h3>
                 
@@ -870,7 +897,7 @@
               <div style="padding: 20px; flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span class="cat-Électronique" style="font-family: monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px;">Électronique</span>
-                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé • 2026</span>
+                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé · 2026</span>
                 </div>
                 <h3 style="font-size: 16px; font-weight: 700; color: #102A70; margin-bottom: 15px; line-height: 1.3;">Dimensionnement Transistor NMOS (Commutation)</h3>
                 
@@ -894,7 +921,7 @@
                 <button onclick="toggleCard(this)" style="background: none; border: none; font-family: monospace; font-size: 11px; color: #2060B8; cursor: pointer; font-weight: bold;">[+] DÉTAILS</button>
                 <div style="display: flex; gap: 10px;">
                   <a href="#" onclick="openPreview('Routage PCB NMOS', '<img src=\'chemin_image.jpg\'>')" style="color: #5A6A7A;" title="Aperçu Visuel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a>
-                  <a href="https://github.com/HoraEmbedded/Projets_GSEAs/tree/main/03_Conception_PCB/BE3_Driver_Relais_MOS" target="_blank" style="color: #5A6A7A;"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                  <a href="https://github.com/HoraEmbedded/Projets_GSEAs" target="_blank" style="color: #5A6A7A;"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
                 </div>
               </div>
             </div>
@@ -904,7 +931,7 @@
               <div style="padding: 20px; flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span class="cat-IoT" style="font-family: monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px;">IoT</span>
-                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé • 2026</span>
+                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé · 2026</span>
                 </div>
                 <h3 style="font-size: 16px; font-weight: 700; color: #102A70; margin-bottom: 15px; line-height: 1.3;">Smart Greenhouse System (Bare-Metal)</h3>
                 
@@ -927,7 +954,7 @@
               <div style="padding: 12px 20px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; background: #F8FBFF;">
                 <button onclick="toggleCard(this)" style="background: none; border: none; font-family: monospace; font-size: 11px; color: #2060B8; cursor: pointer; font-weight: bold;">[+] DÉTAILS</button>
                 <div style="display: flex; gap: 10px;">
-                  <a href="https://github.com/HoraEmbedded/Projets_GSEAs/tree/main/01_Info_Embarquee/Serre_Intelligente" target="_blank" style="color: #5A6A7A;"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+                  <a href="https://github.com/HoraEmbedded/Projets_GSEAs" target="_blank" style="color: #5A6A7A;"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
                 </div>
               </div>
             </div>
@@ -937,7 +964,7 @@
               <div style="padding: 20px; flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span class="cat-Automatisme" style="font-family: monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px;">Automatisme</span>
-                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé • 2026</span>
+                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé · 2026</span>
                 </div>
                 <h3 style="font-size: 16px; font-weight: 700; color: #102A70; margin-bottom: 15px; line-height: 1.3;">Robot Manipulateur (2DDL) - Modélisation</h3>
                 
@@ -967,7 +994,7 @@
               <div style="padding: 20px; flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span class="cat-IA" style="font-family: monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px;">IA</span>
-                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé • 2026</span>
+                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé · 2026</span>
                 </div>
                 <h3 style="font-size: 16px; font-weight: 700; color: #102A70; margin-bottom: 15px; line-height: 1.3;">Auto-Encodeurs — Détection d'Anomalies</h3>
                 
@@ -997,7 +1024,7 @@
               <div style="padding: 20px; flex: 1;">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
                   <span class="cat-Automatisme" style="font-family: monospace; font-size: 10px; padding: 3px 8px; border-radius: 3px;">Automatisme</span>
-                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé • 2026</span>
+                  <span style="font-family: monospace; font-size: 10px; color: #22c55e;">Terminé · 2026</span>
                 </div>
                 <h3 style="font-size: 16px; font-weight: 700; color: #102A70; margin-bottom: 15px; line-height: 1.3;">Convoyeur de Tri Automatique</h3>
                 
@@ -1410,20 +1437,30 @@
 
   <script>
     function switchTab(tabId, element) {
-      // Retirer la classe active de tous les menus
-      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-      // Ajouter la classe active au menu cliqué
-      element.classList.add('active');
-
-      // Masquer toutes les sections
+      // 1. Masquer toutes les sections
       document.querySelectorAll('.section-content').forEach(sec => sec.classList.remove('active'));
-      // Afficher la section cible
+      
+      // 2. Afficher la section cible
       document.getElementById('sec-' + tabId).classList.add('active');
 
-      // Remonter en haut de la page
+      // 3. Gérer la surbrillance du menu latéral
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      
+      if (element && element.classList.contains('nav-item')) {
+        // Si on clique depuis la barre latérale, on allume l'élément directement
+        element.classList.add('active');
+      } else {
+        // Si on clique depuis l'accueil, on fouille dans le menu pour allumer le bon onglet
+        document.querySelectorAll('.nav-item').forEach(el => {
+          if (el.getAttribute('onclick') && el.getAttribute('onclick').includes("'" + tabId + "'")) {
+            el.classList.add('active');
+          }
+        });
+      }
+
+      // 4. Remonter en haut de la page
       document.getElementById('workspace').scrollTop = 0;
     }
-
     /* ── Gestion des Aperçus (Modale) ── */
     function openPreview(title, mediaHTML) {
       document.getElementById('modalTitle').textContent = '>> SYS_VIEWER : ' + title;
