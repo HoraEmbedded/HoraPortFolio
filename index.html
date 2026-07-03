@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Horacia AZONHOUMON — Ingénierie Automatisation & Systèmes</title>
-  <meta name="description" content="Portfolio de Horacia AZONHOUMON, étudiante ingénieure GSEA (ENSA Tanger) — automatisation industrielle, systèmes embarqués, IIoT.">
+  <title>Horacia AZONHOUMON · Ingénierie Automatisation & Systèmes</title>
+  <meta name="description" content="Portfolio de Horacia AZONHOUMON, étudiante ingénieure GSEA (ENSA Tanger) : automatisation industrielle, systèmes embarqués, IIoT.">
 
   <!-- Polices : Inter (texte) + JetBrains Mono (éléments techniques) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -323,7 +323,7 @@
     }
     .filter-btn.active { background: var(--btn); color: #FFF; border-color: var(--btn-bd); }
 
-    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+    .projects-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
     .prj-card {
       background: var(--card); border: 1px solid var(--bd); border-radius: 4px;
       display: flex; flex-direction: column; overflow: hidden;
@@ -339,12 +339,14 @@
     .prj-card p { font-size: 13px; color: var(--ink2); line-height: 1.6; }
     .prj-results { display: flex; flex-direction: column; gap: 3px; font-size: 12.5px; color: var(--ink2); margin-top: 8px; }
     .prj-img {
-      width: 100%; height: 150px; border: 1px dashed var(--blue-bd); border-radius: 4px;
+      width: 100%; height: 220px; border: 1px dashed var(--blue-bd); border-radius: 4px;
       display: flex; align-items: center; justify-content: center;
       font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--faint);
-      background: var(--tint); text-align: center; padding: 10px;
+      background: var(--tint); text-align: center; padding: 10px; cursor: pointer;
     }
     .prj-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
+    /* Quand une image a été ajoutée, on retire le cadre pointillé */
+    .prj-img.has-img { border: none; padding: 0; background: none; }
     .prj-chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .prj-chips .chip { background: var(--blue-bg); color: var(--blue); }
     .prj-foot { padding: 11px 20px; border-top: 1px solid var(--bd-soft); background: var(--card-foot); }
@@ -481,7 +483,7 @@
           <a class="social-btn" href="https://ma.linkedin.com/in/horaembedded" target="_blank" title="LinkedIn">
             <svg viewBox="0 0 24 24"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V9h3v10zM6.5 7.73a1.77 1.77 0 1 1 0-3.53 1.77 1.77 0 0 1 0 3.53zM20.5 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V9h3v1.77c1.4-2.59 7-2.78 7 2.47V19z"/></svg>
           </a>
-          <a class="social-btn" href="/cdn-cgi/l/email-protection#66071c09080e09130b09080e091407050f0726010b070f0a4805090b" title="Email">
+          <a class="social-btn" href="/cdn-cgi/l/email-protection#f293889d9c9a9d879f9d9c9a9d8093919b93b2959f939b9edc919d9f" title="Email">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
         </div>
@@ -510,7 +512,7 @@
 
             <div class="badge">
               <span class="badge-dot"></span>
-              <span data-fr="DISPONIBLE — STAGE PFA 2026" data-en="AVAILABLE — INTERNSHIP 2026"></span>
+              <span data-fr="DISPONIBLE · STAGE PFA 2026" data-en="AVAILABLE · INTERNSHIP 2026"></span>
             </div>
 
             <div class="kicker" data-fr="&gt;&gt; HORAEMBEDDED · PORTFOLIO D'INGÉNIERIE_" data-en="&gt;&gt; HORAEMBEDDED · ENGINEERING PORTFOLIO_"></div>
@@ -536,11 +538,11 @@
               <span style="width: 28px; height: 1px; background: var(--blue-bd);"></span>
               <a href="https://github.com/HoraEmbedded" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.7.8.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
               <a href="https://ma.linkedin.com/in/horaembedded" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V9h3v10zM6.5 7.73a1.77 1.77 0 1 1 0-3.53 1.77 1.77 0 0 1 0 3.53zM20.5 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V9h3v1.77c1.4-2.59 7-2.78 7 2.47V19z"/></svg></a>
-              <a href="/cdn-cgi/l/email-protection#95f4effafbfdfae0f8fafbfdfae7f4f6fcf4d5f2f8f4fcf9bbf6faf8" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+              <a href="/cdn-cgi/l/email-protection#2c4d56434244435941434244435e4d4f454d6c4b414d4540024f4341" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
             </div>
           </div>
 
-          <div class="kicker" style="margin-bottom: 16px;" data-fr="// PÉRIMÈTRE SYSTÈME — DU TERRAIN AU CLOUD" data-en="// SYSTEM SCOPE — FROM FIELD TO CLOUD"></div>
+          <div class="kicker" style="margin-bottom: 16px;" data-fr="// PÉRIMÈTRE SYSTÈME : DU TERRAIN AU CLOUD" data-en="// SYSTEM SCOPE: FROM FIELD TO CLOUD"></div>
 
           <div class="perim-grid">
             <div class="perim-card">
@@ -561,8 +563,8 @@
           </div>
 
           <div class="pos-banner">
-            <p data-fr="&lt;strong&gt;Profil rare :&lt;/strong&gt; je parle à la fois le langage du registre et celui de l'automate — la passerelle OT/IT que cherche l'industrie 4.0."
-               data-en="&lt;strong&gt;A rare profile:&lt;/strong&gt; I speak both the language of the register and that of the PLC — the OT/IT bridge Industry 4.0 is looking for."></p>
+            <p data-fr="&lt;strong&gt;Profil rare :&lt;/strong&gt; je parle à la fois le langage du registre et celui de l'automate : la passerelle OT/IT que cherche l'industrie 4.0."
+               data-en="&lt;strong&gt;A rare profile:&lt;/strong&gt; I speak both the language of the register and that of the PLC: the OT/IT bridge Industry 4.0 is looking for."></p>
             <button onclick="switchTab('profil')" data-fr="DÉCOUVRIR MON PARCOURS →" data-en="DISCOVER MY BACKGROUND →"></button>
           </div>
 
@@ -573,7 +575,7 @@
         ═══════════════════════════════════════════ -->
         <section class="section" id="sec-profil">
 
-          <div class="kicker" data-fr="// 02 — PROFIL" data-en="// 02 — PROFILE"></div>
+          <div class="kicker" data-fr="// 02 · PROFIL" data-en="// 02 · PROFILE"></div>
           <h1 class="sec-title" data-fr="Qui suis-je ?" data-en="Who am I?"></h1>
 
           <div class="about-grid" style="margin-top: 28px;">
@@ -581,8 +583,9 @@
               <div class="photo-frame">
                 <span class="corner c-tl"></span><span class="corner c-tr"></span>
                 <span class="corner c-bl"></span><span class="corner c-br"></span>
-                <!-- Remplace profil.jpg par ta photo (même dossier que ce fichier) -->
-                <img src="profil.jpg" alt="Horacia Azonhoumon">
+                <!-- Photo : mets profil.jpg à côté de ce fichier, OU clique sur le cadre pour choisir
+                     une photo (mémorisée dans le navigateur). -->
+                <img src="profil.jpg" alt="Horacia Azonhoumon" data-img-id="photo-profil" style="cursor: pointer;" onerror="this.removeAttribute('src')">
               </div>
               <a class="btn btn-outline" style="justify-content: center;" href="cv-horacia-azonhoumon.pdf" download>
                 <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
@@ -591,7 +594,7 @@
             </div>
 
             <div class="bio">
-              <h3><strong>HoraEmbedded</strong> <span data-fr="— étudiante ingénieure originaire du Bénin" data-en="— engineering student from Benin"></span></h3>
+              <h3><strong>HoraEmbedded</strong> <span data-fr="· étudiante ingénieure originaire du Bénin" data-en="· engineering student from Benin"></span></h3>
               <p data-fr="Mon parcours dans l'ingénierie a commencé par une curiosité : &lt;em&gt;« Comment les machines savent-elles ce qu'elles doivent faire ? »&lt;/em&gt;. Aujourd'hui, je réponds à cette question en étudiant l'électronique de puissance, la régulation industrielle (PID / FOPDT) et la programmation des systèmes embarqués."
                  data-en="My engineering journey began with a curiosity: &lt;em&gt;“How do machines know what they are supposed to do?”&lt;/em&gt; Today I answer that question by studying power electronics, industrial control (PID / FOPDT) and embedded systems programming."></p>
               <p data-fr="Je suis convaincue que les meilleurs ingénieurs sont avant tout des curieux qui se demandent toujours : &lt;em&gt;« Et si… ? »&lt;/em&gt;"
@@ -614,8 +617,8 @@
             <div class="tl-item">
               <span class="tl-dot"></span>
               <div class="tl-date" data-fr="2024 – Présent" data-en="2024 – Present"></div>
-              <h3 data-fr="Cycle Ingénieur — Génie des Systèmes Électronique &amp; Automatique" data-en="Engineering Cycle — Electronic Systems &amp; Automation Engineering"></h3>
-              <div class="tl-org" data-fr="ENSA Tanger — Tanger, Maroc" data-en="ENSA Tangier — Tangier, Morocco"></div>
+              <h3 data-fr="Cycle Ingénieur en Génie des Systèmes Électronique &amp; Automatique" data-en="Engineering Cycle in Electronic Systems &amp; Automation Engineering"></h3>
+              <div class="tl-org" data-fr="ENSA Tanger · Tanger, Maroc" data-en="ENSA Tangier · Tangier, Morocco"></div>
               <p data-fr="Spécialisation en contrôle automatique, conception de systèmes embarqués, électronique de puissance et IoT industriel."
                  data-en="Specialization in automatic control, embedded systems design, power electronics and industrial IoT."></p>
               <div class="chips">
@@ -628,7 +631,7 @@
               <span class="tl-dot"></span>
               <div class="tl-date">2022 – 2024</div>
               <h3 data-fr="Classes Préparatoires Intégrées" data-en="Integrated Preparatory Classes"></h3>
-              <div class="tl-org" data-fr="ENSA Tanger — Filière MPSI" data-en="ENSA Tangier — MPSI track"></div>
+              <div class="tl-org" data-fr="ENSA Tanger · Filière MPSI" data-en="ENSA Tangier · MPSI track"></div>
               <p data-fr="Mathématiques, physique et sciences de l'ingénieur : une base solide en analyse logique et résolution de problèmes complexes."
                  data-en="Mathematics, physics and engineering science: a solid foundation in logical analysis and complex problem solving."></p>
               <div class="chips">
@@ -653,8 +656,8 @@
              data-en="The best engineers are curious humans first. Here is what defines me outside of industry."></p>
 
           <div class="hobby-grid">
-            <div class="hobby"><span class="hobby-icon">◈</span><div><h3>Anime</h3><p data-fr="L'anime m'enseigne la patience, l'imagination et la persévérance. Ma série préférée : Dr. STONE — un ingénieur qui utilise la science pour changer le monde." data-en="Anime teaches me patience, imagination and perseverance. My favourite series: Dr. STONE — an engineer using science to change the world."></p></div></div>
-            <div class="hobby"><span class="hobby-icon">△</span><div><h3 data-fr="Exploration tech" data-en="Tech exploration"></h3><p data-fr="Je suis de près la robotique, l'IA embarquée et l'industrie intelligente. La technologie évolue vite — je veux être à l'avant-garde." data-en="I closely follow robotics, embedded AI and smart industry. Technology moves fast — I want to be at the forefront."></p></div></div>
+            <div class="hobby"><span class="hobby-icon">◈</span><div><h3>Anime</h3><p data-fr="L'anime m'enseigne la patience, l'imagination et la persévérance. Ma série préférée : Dr. STONE, un ingénieur qui utilise la science pour changer le monde." data-en="Anime teaches me patience, imagination and perseverance. My favourite series: Dr. STONE, an engineer using science to change the world."></p></div></div>
+            <div class="hobby"><span class="hobby-icon">△</span><div><h3 data-fr="Exploration tech" data-en="Tech exploration"></h3><p data-fr="Je suis de près la robotique, l'IA embarquée et l'industrie intelligente. La technologie évolue vite : je veux être à l'avant-garde." data-en="I closely follow robotics, embedded AI and smart industry. Technology moves fast: I want to be at the forefront."></p></div></div>
             <div class="hobby"><span class="hobby-icon">◇</span><div><h3 data-fr="Voyage &amp; découverte" data-en="Travel &amp; discovery"></h3><p data-fr="Quitter le Bénin pour le Maroc m'a ouvert l'esprit à de nouvelles façons de penser. Je souhaite collaborer avec des ingénieurs du monde entier." data-en="Leaving Benin for Morocco opened my mind to new ways of thinking. I want to collaborate with engineers from all over the world."></p></div></div>
             <div class="hobby"><span class="hobby-icon">▦</span><div><h3>Innovation</h3><p data-fr="Les meilleures solutions sont simples. La réponse la plus élégante à un problème complexe est toujours le but ultime." data-en="The best solutions are simple. The most elegant answer to a complex problem is always the ultimate goal."></p></div></div>
             <div class="hobby"><span class="hobby-icon">▣</span><div><h3 data-fr="Apprentissage continu" data-en="Continuous learning"></h3><p data-fr="Cours, documentation, livres, forums : je lis constamment, pour comprendre en profondeur chaque technologie que j'utilise." data-en="Courses, documentation, books, forums: I read constantly, to deeply understand every technology I use."></p></div></div>
@@ -663,7 +666,7 @@
           <div class="quote-block">
             <p data-fr="« Ceux qui sont vraiment sérieux au sujet du logiciel devraient fabriquer leur propre matériel. »"
                data-en="“People who are really serious about software should make their own hardware.”"></p>
-            <div class="quote-author">— Alan Kay</div>
+            <div class="quote-author">Alan Kay</div>
           </div>
 
         </section>
@@ -675,10 +678,10 @@
         ═══════════════════════════════════════════ -->
         <section class="section" id="sec-projets">
 
-          <div class="kicker" data-fr="// 03 — PROJETS" data-en="// 03 — PROJECTS"></div>
+          <div class="kicker" data-fr="// 03 · PROJETS" data-en="// 03 · PROJECTS"></div>
           <h1 class="sec-title" data-fr="Problèmes d'ingénierie résolus" data-en="Engineering problems solved"></h1>
-          <p class="intro" data-fr="Des problèmes réels, des solutions concrètes. Chaque projet part d'un cahier des charges strict pour aboutir à un système fonctionnel — problème, approche et résultats sont visibles d'un coup d'œil."
-             data-en="Real problems, concrete solutions. Every project starts from a strict specification and ends with a working system — problem, approach and results visible at a glance."></p>
+          <p class="intro" data-fr="Des problèmes réels, des solutions concrètes. Chaque projet part d'un cahier des charges strict pour aboutir à un système fonctionnel : problème, approche et résultats sont visibles d'un coup d'œil."
+             data-en="Real problems, concrete solutions. Every project starts from a strict specification and ends with a working system: problem, approach and results visible at a glance."></p>
 
           <div class="filters">
             <button class="filter-btn active" data-filter="tous" data-fr="Tous" data-en="All"></button>
@@ -699,7 +702,7 @@
                   <span class="prj-cat cat-embarque" data-fr="Embarqué" data-en="Embedded"></span>
                   <span class="prj-status" data-fr="Académique · terminé" data-en="Academic · completed"></span>
                 </div>
-                <h3 data-fr="Programmation DSP — TMS320C6713 DSK" data-en="DSP programming — TMS320C6713 DSK"></h3>
+                <h3 data-fr="Programmation DSP : TMS320C6713 DSK" data-en="DSP programming: TMS320C6713 DSK"></h3>
                 <div>
                   <div class="prj-label" data-fr="&gt; Problème" data-en="&gt; Problem"></div>
                   <p data-fr="Traiter des signaux complexes en temps réel avec une haute précision mathématique et un délai d'exécution minimal." data-en="Processing complex signals in real time with high mathematical precision and minimal execution delay."></p>
@@ -712,8 +715,10 @@
                     <span><strong style="color: #1D93B0;">›</strong> <span data-fr="Maîtrise complète de la toolchain DSP." data-en="Full command of the DSP toolchain."></span></span>
                   </div>
                 </div>
-                <!-- Pour afficher une image : remplace ce div par <img class="prj-img" src="mon-image.jpg" alt=""> -->
-                <div class="prj-img" data-fr="[ Capture : Code Composer Studio / banc DSK ]" data-en="[ Screenshot: Code Composer Studio / DSK bench ]"></div>
+                <!-- Clique sur la zone (ou glisse une image dessus) pour ajouter une capture ;
+                     elle est mémorisée dans le navigateur (localStorage) et survit à l'actualisation.
+                     Pour le site public, remplace plutôt le div par : <img class="prj-img has-img" src="mon-image.jpg"> -->
+                <div class="prj-img" data-img-id="prj-dsp" data-fr="[ Capture : Code Composer Studio / banc DSK ]" data-en="[ Screenshot: Code Composer Studio / DSK bench ]"></div>
                 <div class="prj-chips"><span class="chip">C / C++</span><span class="chip" data-fr="Assembleur" data-en="Assembly"></span><span class="chip">DSP TI</span></div>
               </div>
               <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
@@ -740,7 +745,7 @@
                     <span><strong style="color: #C2405A;">›</strong> <span data-fr="Protection contre les surtensions inductives." data-en="Protection against inductive voltage spikes."></span></span>
                   </div>
                 </div>
-                <div class="prj-img" data-fr="[ Photo : schéma / routage PCB ]" data-en="[ Photo: schematic / PCB routing ]"></div>
+                <div class="prj-img" data-img-id="prj-nmos" data-fr="[ Photo : schéma / routage PCB ]" data-en="[ Photo: schematic / PCB routing ]"></div>
                 <div class="prj-chips"><span class="chip" data-fr="Élec. puissance" data-en="Power elec."></span><span class="chip" data-fr="Calcul HW" data-en="HW sizing"></span><span class="chip">PCB</span></div>
               </div>
               <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
@@ -767,7 +772,7 @@
                     <span><strong style="color: #1F9E5E;">›</strong> <span data-fr="Simulation complète en Software-in-the-Loop." data-en="Full software-in-the-loop simulation."></span></span>
                   </div>
                 </div>
-                <div class="prj-img" data-fr="[ Capture : simulation Wokwi ]" data-en="[ Screenshot: Wokwi simulation ]"></div>
+                <div class="prj-img" data-img-id="prj-serre" data-fr="[ Capture : simulation Wokwi ]" data-en="[ Screenshot: Wokwi simulation ]"></div>
                 <div class="prj-chips"><span class="chip">C (bare-metal)</span><span class="chip">ATmega2560</span><span class="chip">Wokwi</span></div>
               </div>
               <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs/tree/main/01_Info_Embarquee/greenhouse" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
@@ -781,7 +786,7 @@
                   <span class="prj-cat cat-automatisme" data-fr="Automatisme" data-en="Automation"></span>
                   <span class="prj-status" data-fr="Académique · terminé" data-en="Academic · completed"></span>
                 </div>
-                <h3 data-fr="Robot manipulateur (2 DDL) — modélisation &amp; commande" data-en="Robot manipulator (2 DOF) — modelling &amp; control"></h3>
+                <h3 data-fr="Robot manipulateur (2 DDL) : modélisation &amp; commande" data-en="Robot manipulator (2 DOF): modelling &amp; control"></h3>
                 <div>
                   <div class="prj-label" data-fr="&gt; Problème" data-en="&gt; Problem"></div>
                   <p data-fr="Maintenir la précision de trajectoire d'un bras robotique face aux perturbations dynamiques." data-en="Maintaining the trajectory accuracy of a robotic arm under dynamic disturbances."></p>
@@ -794,7 +799,7 @@
                     <span><strong style="color: #C08018;">›</strong> <span data-fr="Modèle physique validé en simulation 3D." data-en="Physical model validated in 3D simulation."></span></span>
                   </div>
                 </div>
-                <div class="prj-img" data-fr="[ Capture : Simscape (vue 3D) ]" data-en="[ Screenshot: Simscape (3D view) ]"></div>
+                <div class="prj-img" data-img-id="prj-robot" data-fr="[ Capture : Simscape (vue 3D) ]" data-en="[ Screenshot: Simscape (3D view) ]"></div>
                 <div class="prj-chips"><span class="chip">MATLAB</span><span class="chip">Simscape</span><span class="chip">PID</span></div>
               </div>
               <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
@@ -808,7 +813,7 @@
                   <span class="prj-cat cat-ia" data-fr="IA" data-en="AI"></span>
                   <span class="prj-status" data-fr="Académique · terminé" data-en="Academic · completed"></span>
                 </div>
-                <h3 data-fr="Auto-encodeurs — détection d'anomalies" data-en="Autoencoders — anomaly detection"></h3>
+                <h3 data-fr="Auto-encodeurs : détection d'anomalies" data-en="Autoencoders: anomaly detection"></h3>
                 <div>
                   <div class="prj-label" data-fr="&gt; Problème" data-en="&gt; Problem"></div>
                   <p data-fr="La détection visuelle des défauts sur chaîne de production est lente, coûteuse et sujette à l'erreur humaine." data-en="Visual defect detection on a production line is slow, costly and error-prone."></p>
@@ -821,7 +826,7 @@
                     <span><strong style="color: #8A5CD0;">›</strong> <span data-fr="Base d'un diagnostic industriel automatisé." data-en="Foundation for automated industrial diagnostics."></span></span>
                   </div>
                 </div>
-                <div class="prj-img" data-fr="[ Figure : reconstruction / carte d'anomalies ]" data-en="[ Figure: reconstruction / anomaly map ]"></div>
+                <div class="prj-img" data-img-id="prj-ia" data-fr="[ Figure : reconstruction / carte d'anomalies ]" data-en="[ Figure: reconstruction / anomaly map ]"></div>
                 <div class="prj-chips"><span class="chip">Python</span><span class="chip">Keras</span><span class="chip">Deep learning</span></div>
               </div>
               <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
@@ -848,7 +853,7 @@
                     <span><strong style="color: #C08018;">›</strong> <span data-fr="Tri par hauteur validé sur le jumeau numérique." data-en="Height-based sorting validated on the digital twin."></span></span>
                   </div>
                 </div>
-                <div class="prj-img" data-fr="[ GIF / capture : simulation Factory I/O ]" data-en="[ GIF / screenshot: Factory I/O simulation ]"></div>
+                <div class="prj-img" data-img-id="prj-convoyeur" data-fr="[ GIF / capture : simulation Factory I/O ]" data-en="[ GIF / screenshot: Factory I/O simulation ]"></div>
                 <div class="prj-chips"><span class="chip">TIA Portal</span><span class="chip">Factory I/O</span><span class="chip">PLC</span></div>
               </div>
               <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs/tree/main/02_Automatique/P1-01-Sorting-by-height" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
@@ -857,7 +862,7 @@
           </div>
 
           <div class="os-banner">
-            <p data-fr="Tous mes projets sont open source — code, schémas et documentation." data-en="All my projects are open source — code, schematics and documentation."></p>
+            <p data-fr="Tous mes projets sont open source : code, schémas et documentation." data-en="All my projects are open source: code, schematics and documentation."></p>
             <a class="btn-github" href="https://github.com/HoraEmbedded" target="_blank">
               <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.8 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.62-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.7.8.58A12 12 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
               <span data-fr="Voir le profil GitHub" data-en="View GitHub profile"></span>
@@ -871,10 +876,10 @@
         ═══════════════════════════════════════════ -->
         <section class="section" id="sec-competences">
 
-          <div class="kicker" data-fr="// 04 — COMPÉTENCES" data-en="// 04 — SKILLS"></div>
+          <div class="kicker" data-fr="// 04 · COMPÉTENCES" data-en="// 04 · SKILLS"></div>
           <h1 class="sec-title" data-fr="Bibliothèques &amp; composants maîtrisés" data-en="Libraries &amp; components mastered"></h1>
-          <p class="intro" data-fr="Langages, microcontrôleurs et outils utilisés dans la conception, la simulation et l'implémentation de mes systèmes — chacun mis en pratique dans au moins un projet de la section 03 · Projets."
-             data-en="Languages, microcontrollers and tools used to design, simulate and implement my systems — each put into practice in at least one project in section 03 · Projects."></p>
+          <p class="intro" data-fr="Langages, microcontrôleurs et outils utilisés dans la conception, la simulation et l'implémentation de mes systèmes ; chacun mis en pratique dans au moins un projet de la section 03 · Projets."
+             data-en="Languages, microcontrollers and tools used to design, simulate and implement my systems; each put into practice in at least one project in section 03 · Projects."></p>
 
           <div class="skills-grid">
             <div class="skill-card">
@@ -928,7 +933,7 @@
         ═══════════════════════════════════════════ -->
         <section class="section" id="sec-contact">
 
-          <div class="kicker">// 05 — CONTACT</div>
+          <div class="kicker">// 05 · CONTACT</div>
           <h1 class="sec-title" data-fr="Construisons quelque chose ensemble" data-en="Let's build something together"></h1>
           <p class="intro" data-fr="À la recherche d'une ingénieure stagiaire passionnée par l'automatisation et l'IIoT ? Je serais ravie d'échanger avec vous."
              data-en="Looking for an intern engineer passionate about automation and IIoT? I would love to hear from you."></p>
@@ -940,7 +945,7 @@
                 <input type="text" name="name" class="form-control" required data-fr-placeholder="Votre nom (ex. : Jean Dupont)" data-en-placeholder="Your name (e.g. Jane Doe)">
                 <input type="email" name="email" class="form-control" required data-fr-placeholder="Adresse email (ex. : vous@entreprise.com)" data-en-placeholder="Email address (e.g. you@company.com)">
                 <select name="subject" class="form-control" required>
-                  <option value="" disabled selected data-fr="— Objet de la requête —" data-en="— Subject —"></option>
+                  <option value="" disabled selected data-fr="Objet de la requête…" data-en="Subject…"></option>
                   <option value="internship" data-fr="Opportunité de stage" data-en="Internship opportunity"></option>
                   <option value="collaboration" data-fr="Collaboration sur un projet" data-en="Project collaboration"></option>
                   <option value="question" data-fr="Question technique" data-en="Technical question"></option>
@@ -954,14 +959,14 @@
 
             <div class="contact-info">
               <div class="info-header">
-                <div class="info-line"><span style="color: var(--blue);">🎓</span><span data-fr="&lt;strong&gt;École :&lt;/strong&gt; ENSA Tanger — 4ème année" data-en="&lt;strong&gt;School:&lt;/strong&gt; ENSA Tangier — 4th year"></span></div>
-                <div class="info-line"><span style="color: var(--green);">✓</span><span data-fr="&lt;strong&gt;Statut :&lt;/strong&gt; ouverte aux opportunités de stage — 2026" data-en="&lt;strong&gt;Status:&lt;/strong&gt; open to internship opportunities — 2026"></span></div>
+                <div class="info-line"><span style="color: var(--blue);">🎓</span><span data-fr="&lt;strong&gt;École :&lt;/strong&gt; ENSA Tanger, 4ème année" data-en="&lt;strong&gt;School:&lt;/strong&gt; ENSA Tangier, 4th year"></span></div>
+                <div class="info-line"><span style="color: var(--green);">✓</span><span data-fr="&lt;strong&gt;Statut :&lt;/strong&gt; ouverte aux opportunités de stage 2026" data-en="&lt;strong&gt;Status:&lt;/strong&gt; open to internship opportunities for 2026"></span></div>
               </div>
 
               <div class="info-row">
                 <div class="info-main">
                   <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                  <a href="/cdn-cgi/l/email-protection#26475c49484e49534b49484e495447454f4766414b474f4a0845494b"><span class="__cf_email__" data-cfemail="6a0b10050402051f0705040205180b09030b2a0d070b030644090507">[email&#160;protected]</span></a>
+                  <a href="/cdn-cgi/l/email-protection#294853464741465c44464741465b484a4048694e44484045074a4644"><span class="__cf_email__" data-cfemail="2c4d56434244435941434244435e4d4f454d6c4b414d4540024f4341">[email&#160;protected]</span></a>
                 </div>
                 <span class="info-caption" data-fr="Idéal pour les opportunités professionnelles" data-en="Best for professional opportunities"></span>
               </div>
@@ -1003,7 +1008,7 @@
   ═══════════════════════════════════════════════ -->
   <footer class="statusbar">
     <span>GRID: 20 px · UNITS: SI</span>
-    <span class="status-ok"><span class="status-dot"></span><span data-fr="portfolio_v2 — 5 modules chargés" data-en="portfolio_v2 — 5 modules loaded"></span></span>
+    <span class="status-ok"><span class="status-dot"></span><span data-fr="portfolio_v2 · 5 modules chargés" data-en="portfolio_v2 · 5 modules loaded"></span></span>
     <span data-fr="Tanger, MA · GMT+1" data-en="Tangier, MA · GMT+1"></span>
   </footer>
 
@@ -1021,8 +1026,8 @@
       localStorage.setItem('hx-lang', lang);
       document.documentElement.lang = lang;
 
-      // Textes (le menu latéral est traité à part, voir plus bas)
-      document.querySelectorAll('[data-fr]:not(.nav-item)').forEach(el => {
+      // Textes (le menu latéral et les zones d'image déjà remplies sont traités à part)
+      document.querySelectorAll('[data-fr]:not(.nav-item):not(.has-img)').forEach(el => {
         const txt = el.getAttribute('data-' + lang);
         if (txt !== null) el.innerHTML = txt;
       });
@@ -1081,6 +1086,46 @@
       if (!document.fullscreenElement) document.documentElement.requestFullscreen();
       else document.exitFullscreen();
     }
+
+    /* ── PHOTOS PERSISTANTES ────────────────────────
+       Chaque zone marquée data-img-id accepte une image par clic
+       ou glisser-déposer. L'image est enregistrée en base64 dans
+       localStorage : elle reste après actualisation de la page.
+       NB : ce stockage est propre À TON navigateur. Pour que les
+       visiteurs voient les images, ajoute de vrais fichiers via
+       <img src="..."> avant de publier le site. */
+    function showSlotImage(slot, src) {
+      if (slot.tagName === 'IMG') { slot.src = src; return; }
+      slot.innerHTML = '<img src="' + src + '" alt="">';
+      slot.classList.add('has-img');
+    }
+    function saveSlotImage(slot, key, file) {
+      if (!file || !file.type.startsWith('image/')) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try { localStorage.setItem(key, reader.result); }
+        catch (e) { alert('Image trop lourde pour être mémorisée (max ~2 Mo). Elle s\'affiche mais disparaîtra à l\'actualisation.'); }
+        showSlotImage(slot, reader.result);
+      };
+      reader.readAsDataURL(file);
+    }
+    document.querySelectorAll('[data-img-id]').forEach(slot => {
+      const key = 'hx-img-' + slot.dataset.imgId;
+      const saved = localStorage.getItem(key);
+      if (saved) showSlotImage(slot, saved);
+      slot.title = 'Cliquer ou glisser une image ici';
+      slot.addEventListener('click', () => {
+        const input = document.createElement('input');
+        input.type = 'file'; input.accept = 'image/*';
+        input.onchange = () => saveSlotImage(slot, key, input.files[0]);
+        input.click();
+      });
+      slot.addEventListener('dragover', e => e.preventDefault());
+      slot.addEventListener('drop', e => {
+        e.preventDefault();
+        saveSlotImage(slot, key, e.dataTransfer.files[0]);
+      });
+    });
 
     /* ── INITIALISATION ─────────────────────────────── */
     setLang(currentLang);
