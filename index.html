@@ -26,8 +26,14 @@
        · PROJETS : section "03 · PROJETS" — chaque projet est un
          bloc <article class="prj-card">…</article> : duplique-en
          un pour ajouter un projet.
-       · IMAGES DE PROJETS : remplace les <div class="prj-img">
-         par <img class="prj-img has-img" src="mon-image.jpg">.
+       · IMAGES / VIDÉOS DE PROJETS : clique sur une zone vide (ou
+         glisse des fichiers dessus) pour ajouter un ou PLUSIEURS
+         médias ; « + Ajouter un média » pour compléter, « ✕ » au
+         survol pour supprimer. (Stocké dans TON navigateur.)
+         Pour le site public, remplace les <div class="prj-img">
+         par <img class="prj-img has-img" src="mon-image.jpg">
+         ou <video class="prj-img has-img" src="ma-video.mp4" autoplay loop muted playsinline controls></video>.
+         Le média garde ses proportions et la zone s'adapte à sa hauteur.
        · FORMULAIRE : action="https://formspree.io/f/xgonpprj"
          (ton endpoint Formspree actuel).
   ════════════════════════════════════════════════════════ -->
@@ -277,7 +283,8 @@
     .about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; margin-bottom: 40px; }
     .photo-col { max-width: 280px; display: flex; flex-direction: column; gap: 14px; }
     .photo-frame { position: relative; border: 1px dashed var(--blue); padding: 6px; background: var(--tint); }
-    .photo-frame img { width: 100%; aspect-ratio: 3/4; object-fit: cover; display: block; }
+    .photo-frame img { width: 100%; height: auto; display: block; }
+    .photo-frame img:not([src]) { aspect-ratio: 3/4; } /* garde la hauteur du cadre tant qu'il n'y a pas de photo */
     .corner { position: absolute; width: 14px; height: 14px; border: 0 solid var(--deep); }
     .c-tl { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; }
     .c-tr { top: -1px; right: -1px; border-top-width: 2px; border-right-width: 2px; }
@@ -359,9 +366,26 @@
       font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--faint);
       background: var(--tint); text-align: center; padding: 10px; cursor: pointer;
     }
-    .prj-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 4px; }
-    /* Quand une image a été ajoutée, on retire le cadre pointillé */
-    .prj-img.has-img { border: none; padding: 0; background: none; }
+    /* Média ajouté : pleine largeur, hauteur automatique -> aucune déformation, aucun rognage */
+    .prj-img img, .prj-img video { display: block; width: 100%; height: auto; max-height: 480px; object-fit: contain; border-radius: 4px; }
+    /* Quand un média a été ajouté : le cadre s'adapte, les médias s'empilent */
+    .prj-img.has-img {
+      border: none; padding: 0; background: none; height: auto;
+      flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 8px;
+    }
+    .media-item { position: relative; }
+    .media-del {
+      position: absolute; top: 6px; right: 6px; width: 26px; height: 26px;
+      border: none; border-radius: 3px; background: rgba(15, 44, 85, 0.75); color: #fff;
+      font-size: 13px; line-height: 1; cursor: pointer; opacity: 0; transition: opacity 0.15s;
+    }
+    .media-item:hover .media-del { opacity: 1; }
+    .media-add {
+      align-self: flex-start; background: none; border: 1px dashed var(--blue-bd); color: var(--blue);
+      font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 5px 10px;
+      border-radius: 3px; cursor: pointer;
+    }
+    .media-add:hover { border-color: var(--blue); }
     .prj-chips { display: flex; flex-wrap: wrap; gap: 6px; }
     .prj-chips .chip { background: var(--blue-bg); color: var(--blue); }
     .prj-foot { padding: 11px 20px; border-top: 1px solid var(--bd-soft); background: var(--card-foot); }
@@ -486,7 +510,7 @@
           <a class="social-btn" href="https://ma.linkedin.com/in/horaembedded" target="_blank" title="LinkedIn">
             <svg viewBox="0 0 24 24"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zM8 19H5V9h3v10zM6.5 7.73a1.77 1.77 0 1 1 0-3.53 1.77 1.77 0 0 1 0 3.53zM20.5 19h-3v-5.6c0-3.37-4-3.11-4 0V19h-3V9h3v1.77c1.4-2.59 7-2.78 7 2.47V19z"/></svg>
           </a>
-          <a class="social-btn" href="/cdn-cgi/l/email-protection#b9d8c3d6d7d1d6ccd4d6d7d1d6cbd8dad0d8f9ded4d8d0d597dad6d4" title="Email">
+          <a class="social-btn" href="/cdn-cgi/l/email-protection#e98893868781869c84868781869b888a8088a98e84888085c78a8684" title="Email">
             <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
           </a>
         </div>
@@ -962,7 +986,7 @@
               <div class="info-row">
                 <div class="info-main">
                   <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                  <a href="/cdn-cgi/l/email-protection#d7b6adb8b9bfb8a2bab8b9bfb8a5b6b4beb697b0bab6bebbf9b4b8ba"><span class="__cf_email__" data-cfemail="c1a0bbaeafa9aeb4acaeafa9aeb3a0a2a8a081a6aca0a8adefa2aeac">[email&#160;protected]</span></a>
+                  <a href="/cdn-cgi/l/email-protection#accdd6c3c2c4c3d9c1c3c2c4c3decdcfc5cdeccbc1cdc5c082cfc3c1"><span class="__cf_email__" data-cfemail="07667d68696f68726a68696f687566646e6647606a666e6b2964686a">[email&#160;protected]</span></a>
                 </div>
                 <span class="info-caption" data-fr="Idéal pour les opportunités professionnelles" data-en="Best for professional opportunities"></span>
               </div>
@@ -1079,36 +1103,99 @@
        NB : ce stockage est propre À TON navigateur. Pour que les
        visiteurs voient les images, ajoute de vrais fichiers via
        <img src="..."> avant de publier le site. */
-    function showSlotImage(slot, src) {
-      if (slot.tagName === 'IMG') { slot.src = src; return; }
-      slot.innerHTML = '<img src="' + src + '" alt="">';
-      slot.classList.add('has-img');
+    /* ── Chaque zone stocke une LISTE de médias (JSON dans localStorage). ── */
+    function getSlotList(key) {
+      const raw = localStorage.getItem(key);
+      if (!raw) return [];
+      if (raw.startsWith('data:')) return [raw]; // ancien format (un seul média)
+      try { const a = JSON.parse(raw); return Array.isArray(a) ? a : []; } catch (e) { return []; }
     }
-    function saveSlotImage(slot, key, file) {
-      if (!file || !file.type.startsWith('image/')) return;
-      const reader = new FileReader();
-      reader.onload = () => {
-        try { localStorage.setItem(key, reader.result); }
-        catch (e) { alert('Image trop lourde pour être mémorisée (max ~2 Mo). Elle s\'affiche mais disparaîtra à l\'actualisation.'); }
-        showSlotImage(slot, reader.result);
-      };
-      reader.readAsDataURL(file);
+    function setSlotList(key, list) {
+      try {
+        if (list.length) localStorage.setItem(key, JSON.stringify(list));
+        else localStorage.removeItem(key);
+      } catch (e) { alert('Fichier(s) trop lourd(s) pour être mémorisé(s) (max ~2 Mo au total). Affichés, mais ils disparaîtront à l\'actualisation.'); }
+    }
+    function renderSlot(slot, key, listOverride) {
+      const list = listOverride || getSlotList(key);
+      const lang = localStorage.getItem('hx-lang') || 'fr';
+      if (slot.tagName === 'IMG') {
+        const img = list.find(s => !s.startsWith('data:video'));
+        if (img) slot.src = img;
+        return;
+      }
+      if (!list.length) {
+        slot.classList.remove('has-img');
+        slot.innerHTML = slot.getAttribute('data-' + lang) || '';
+        return;
+      }
+      slot.classList.add('has-img');
+      slot.innerHTML = '';
+      list.forEach((src, i) => {
+        const isVideo = src.startsWith('data:video') || /\.(mp4|webm|ogv|mov)$/i.test(src);
+        const wrap = document.createElement('div');
+        wrap.className = 'media-item';
+        wrap.innerHTML = isVideo
+          ? '<video src="' + src + '" autoplay loop muted playsinline controls></video>'
+          : '<img src="' + src + '" alt="">';
+        const del = document.createElement('button');
+        del.type = 'button'; del.className = 'media-del';
+        del.title = lang === 'en' ? 'Delete' : 'Supprimer'; del.textContent = '✕';
+        del.addEventListener('click', e => {
+          e.stopPropagation();
+          const l = getSlotList(key); l.splice(i, 1); setSlotList(key, l); renderSlot(slot, key, l);
+        });
+        wrap.appendChild(del);
+        slot.appendChild(wrap);
+      });
+      const add = document.createElement('button');
+      add.type = 'button'; add.className = 'media-add';
+      add.textContent = lang === 'en' ? '+ Add media' : '+ Ajouter un média';
+      add.addEventListener('click', e => { e.stopPropagation(); pickFiles(slot, key); });
+      slot.appendChild(add);
+    }
+    function pickFiles(slot, key) {
+      const input = document.createElement('input');
+      input.type = 'file';
+      input.accept = slot.tagName === 'IMG' ? 'image/*' : 'image/*,video/*';
+      if (slot.tagName !== 'IMG') input.multiple = true;
+      input.onchange = () => addFiles(slot, key, input.files);
+      input.click();
+    }
+    function addFiles(slot, key, files) {
+      const ok = [...files].filter(f => f.type.startsWith('image/') || f.type.startsWith('video/'));
+      if (!ok.length) return;
+      if (slot.tagName === 'IMG') { // photo de profil : une seule image
+        const f = ok.find(f => f.type.startsWith('image/'));
+        if (!f) return;
+        const r = new FileReader();
+        r.onload = () => { setSlotList(key, [r.result]); renderSlot(slot, key, [r.result]); };
+        r.readAsDataURL(f);
+        return;
+      }
+      const list = getSlotList(key);
+      let pending = ok.length;
+      ok.forEach(f => {
+        const r = new FileReader();
+        r.onload = () => {
+          list.push(r.result);
+          if (--pending === 0) { setSlotList(key, list); renderSlot(slot, key, list); }
+        };
+        r.readAsDataURL(f);
+      });
     }
     document.querySelectorAll('[data-img-id]').forEach(slot => {
       const key = 'hx-img-' + slot.dataset.imgId;
-      const saved = localStorage.getItem(key);
-      if (saved) showSlotImage(slot, saved);
-      slot.title = 'Cliquer ou glisser une image ici';
+      renderSlot(slot, key);
+      slot.title = 'Cliquer ou glisser des images / vidéos ici';
       slot.addEventListener('click', () => {
-        const input = document.createElement('input');
-        input.type = 'file'; input.accept = 'image/*';
-        input.onchange = () => saveSlotImage(slot, key, input.files[0]);
-        input.click();
+        if (slot.tagName !== 'IMG' && slot.classList.contains('has-img')) return; // géré par « + Ajouter »
+        pickFiles(slot, key);
       });
       slot.addEventListener('dragover', e => e.preventDefault());
       slot.addEventListener('drop', e => {
         e.preventDefault();
-        saveSlotImage(slot, key, e.dataTransfer.files[0]);
+        addFiles(slot, key, e.dataTransfer.files);
       });
     });
 
