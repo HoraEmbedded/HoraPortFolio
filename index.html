@@ -808,32 +808,70 @@
               <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs/tree/main/01_Info_Embarquee/greenhouse" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
             </article>
 
-            <!-- ── Projet 4 : Robot 2 DDL ── -->
-            <article class="prj-card" data-category="automatisme">
-              <div class="prj-bar" style="background: linear-gradient(90deg, #C08018, transparent);"></div>
-              <div class="prj-body">
-                <div class="prj-head">
-                  <span class="prj-cat cat-automatisme" data-fr="Automatisme" data-en="Automation"></span>
-                  <span class="prj-status" data-fr="Académique · terminé" data-en="Academic · completed"></span>
-                </div>
-                <h3 data-fr="Robot manipulateur (2 DDL) : modélisation &amp; commande" data-en="Robot manipulator (2 DOF): modelling &amp; control"></h3>
-                <div>
-                  <div class="prj-label" data-fr="&gt; Problème" data-en="&gt; Problem"></div>
-                  <p data-fr="Maintenir la précision de trajectoire d'un bras robotique face aux perturbations dynamiques." data-en="Maintaining the trajectory accuracy of a robotic arm under dynamic disturbances."></p>
-                </div>
-                <div>
-                  <div class="prj-label" style="color: #C08018;" data-fr="&gt; Solution &amp; résultats" data-en="&gt; Solution &amp; results"></div>
-                  <p data-fr="Commande PID sous MATLAB / Simscape avec étude cinématique complète (FK / IK)." data-en="PID control in MATLAB / Simscape with a full kinematic study (FK / IK)."></p>
-                  <div class="prj-results">
-                    <span><strong style="color: #C08018;">›</strong> <span data-fr="Erreur latérale de suivi &lt; 0,05 m." data-en="Lateral tracking error &lt; 0.05 m."></span></span>
-                    <span><strong style="color: #C08018;">›</strong> <span data-fr="Modèle physique validé en simulation 3D." data-en="Physical model validated in 3D simulation."></span></span>
-                  </div>
-                </div>
-                <div class="prj-img" data-img-id="prj-robot" data-fr="[ Capture : Simscape (vue 3D) ]" data-en="[ Screenshot: Simscape (3D view) ]"></div>
-                <div class="prj-chips"><span class="chip">MATLAB</span><span class="chip">Simscape</span><span class="chip">PID</span></div>
-              </div>
-              <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
-            </article>
+            <!-- ── Projet : Bras manipulateur 2R (PID + cinématique) ── -->
+<article class="prj-card" data-category="automatisme">
+  <div class="prj-bar" style="background: linear-gradient(90deg, #C08018, transparent);"></div>
+  <div class="prj-body">
+    <div class="prj-head">
+      <span class="prj-cat cat-automatisme" data-fr="Automatisme" data-en="Automation"></span>
+      <span class="prj-status" data-fr="Académique · terminé" data-en="Academic · completed"></span>
+    </div>
+    <h3 data-fr="Bras manipulateur 2R : commande PID &amp; cinématique" data-en="2R manipulator arm: PID control &amp; kinematics"></h3>
+    <div>
+      <div class="prj-label" data-fr="&gt; Problème" data-en="&gt; Problem"></div>
+      <p data-fr="Positionner un bras robotisé 2R et lui faire suivre des trajectoires précises malgré le couplage dynamique entre les deux axes." data-en="Positioning a 2R robotic arm and making it follow precise trajectories despite the dynamic coupling between the two axes."></p>
+    </div>
+    <div>
+      <div class="prj-label" style="color: #C08018;" data-fr="&gt; Solution &amp; résultats" data-en="&gt; Solution &amp; results"></div>
+      <p data-fr="Modèle physique sous Simscape Multibody, commande PID réglée axe par axe, cinématique directe/inverse (Robotics System Toolbox) et génération de trajectoires lissées (Polynomial Trajectory + Rate Limiter)." data-en="Physical model in Simscape Multibody, per-axis tuned PID control, forward/inverse kinematics (Robotics System Toolbox) and smoothed trajectory generation (Polynomial Trajectory + Rate Limiter)."></p>
+      <div class="prj-results">
+        <span><strong style="color: #C08018;">›</strong> <span data-fr="Réponse à un échelon : temps de réponse ~0,1 s, dépassement &lt; 5 %, erreur statique nulle." data-en="Step response: ~0.1 s settling time, &lt; 5 % overshoot, zero steady-state error."></span></span>
+        <span><strong style="color: #C08018;">›</strong> <span data-fr="Suivi de trajectoires cercle et carré validé en cinématique inverse." data-en="Circle and square trajectory tracking validated in inverse kinematics."></span></span>
+        <span><strong style="color: #C08018;">›</strong> <span data-fr="Espace de travail caractérisé : anneau de 0,1 m à 0,9 m, singularités identifiées." data-en="Workspace characterized: 0.1 m to 0.9 m annulus, singularities identified."></span></span>
+      </div>
+    </div>
+    
+    <div class="prj-img has-img">
+  <img src="robot-simscape.png"        alt="Vue 3D Simscape">
+  <img src="espace-de-travail.png"  alt="Espace de travail 2R">
+</div>
+    
+    <div class="prj-chips"><span class="chip">MATLAB</span><span class="chip">Simscape</span><span class="chip">Robotics System Toolbox</span><span class="chip">PID</span><span class="chip">FK / IK</span></div>
+  </div>
+  <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs/tree/main/02_Automatique/Commande_Robotique" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
+</article>
+
+<!-- ── Projet : Commande floue d'un robot mobile ── -->
+<article class="prj-card" data-category="automatisme">
+  <div class="prj-bar" style="background: linear-gradient(90deg, #C08018, transparent);"></div>
+  <div class="prj-body">
+    <div class="prj-head">
+      <span class="prj-cat cat-automatisme" data-fr="Automatisme" data-en="Automation"></span>
+      <span class="prj-status" data-fr="Académique · terminé" data-en="Academic · completed"></span>
+    </div>
+    <h3 data-fr="Commande floue d'un robot mobile (unicycle)" data-en="Fuzzy control of a mobile robot (unicycle)"></h3>
+    <div>
+      <div class="prj-label" data-fr="&gt; Problème" data-en="&gt; Problem"></div>
+      <p data-fr="Faire converger un robot mobile non-holonome vers une cible sans modèle dynamique explicite ni réglage PID fastidieux." data-en="Driving a non-holonomic mobile robot to a target without an explicit dynamic model or tedious PID tuning."></p>
+    </div>
+    <div>
+      <div class="prj-label" style="color: #C08018;" data-fr="&gt; Solution &amp; résultats" data-en="&gt; Solution &amp; results"></div>
+      <p data-fr="Contrôleur flou de Mamdani (défuzzification par centre de gravité) : entrées distance-à-la-cible et erreur angulaire, sorties vitesses des roues gauche/droite, 9 règles floues." data-en="Mamdani fuzzy controller (centroid defuzzification): distance-to-target and heading-error inputs, left/right wheel-speed outputs, 9 fuzzy rules."></p>
+      <div class="prj-results">
+        <span><strong style="color: #C08018;">›</strong> <span data-fr="Convergence vers la cible (2, 2) depuis la position initiale." data-en="Convergence to target (2, 2) from the initial position."></span></span>
+        <span><strong style="color: #C08018;">›</strong> <span data-fr="Erreur latérale de suivi &lt; 0,05 m." data-en="Lateral tracking error &lt; 0.05 m."></span></span>
+        <span><strong style="color: #C08018;">›</strong> <span data-fr="Commande robuste, sans identification du modèle dynamique." data-en="Robust control, without dynamic-model identification."></span></span>
+      </div>
+    </div>
+    
+
+
+    <div class="prj-chips"><span class="chip">MATLAB</span><span class="chip">Simulink</span><span class="chip">Fuzzy Logic Toolbox</span><span class="chip" data-fr="Logique floue" data-en="Fuzzy logic"></span><span class="chip">Mamdani</span></div>
+  </div>
+  <div class="prj-foot"><a href="https://github.com/HoraEmbedded/Projets_GSEAs/tree/main/02_Automatique/Robot_Mobile_Flou" target="_blank" data-fr="CODE SOURCE →" data-en="SOURCE CODE →"></a></div>
+</article>
+
+            
 
             <!-- ── Projet 5 : Auto-encodeurs ── -->
             <article class="prj-card" data-category="ia">
